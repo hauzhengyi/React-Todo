@@ -1,0 +1,174 @@
+:root {
+  --dominant-color: #ffffff;
+  --secondary-color: #f1ecff;
+  --tertiary-color: #dacff8;
+  --accent-color: #8758ff;
+}
+
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif, 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dominant-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.TodoWrapper {
+  background: var(--dominant-color);
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 30rem;
+  box-shadow: 0px 0px 40px 0px rgba(128, 128, 128, 0.4);
+}
+
+.TodoForm {
+  width: 100%;
+}
+
+.todo-input {
+  outline: none;
+  background: rgba(250, 250, 250);
+  border-radius: 15px;
+  border: 0px solid;
+  box-shadow: 0px 0px 10px 0px rgba(220, 220, 220) inset;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  width: 18rem;
+  transition: 0.2s;
+}
+
+.todo-input:focus {
+  box-shadow: 0px 0px 10px 0px rgba(230, 230, 230) inset,
+    0px 0px 0px 1px var(--accent-color) inset;
+  background: var(--dominant-color);
+}
+
+.todo-btn {
+  font-weight: bold;
+  background: var(--accent-color);
+  border-radius: 15px;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.todo-btn:hover {
+  box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5);
+}
+
+.todo-btn:active {
+  box-shadow: none;
+}
+
+.Todo {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dominant-color);
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Todo p {
+  width: 70%;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.Todo:hover {
+  background: var(--secondary-color);
+}
+
+.Todo:active {
+  background: var(--tertiary-color);
+}
+
+.EditTodoForm {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dominant-color);
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.EditTodoForm:hover {
+  background: var(--secondary-color);
+}
+
+.edit-todo-input {
+  all: unset;
+  font-size: 0.9rem;
+  text-align: left;
+  width: 70%;
+  box-shadow: 0px 1px 0px 0px rgba(128, 128, 128);
+  transition: 0.2s;
+}
+
+.edit-todo-input:focus {
+  box-shadow: 0px 2px 0px 0px var(--accent-color);
+  transition: 0.2s;
+}
+
+.edit-todo-btn {
+  all: unset;
+}
+.svg-inline--fa {
+  margin-left: 0.35rem;
+  margin-right: 0.35rem;
+  cursor: pointer;
+  width: 14px;
+}
+
+.svg-inline--fa:hover {
+  color: var(--accent-color);
+}
+
+.fa-trash,
+.fa-xmark {
+  margin-right: 0rem;
+}
+
+.completed {
+  color: rgba(128, 128, 128);
+  text-decoration: line-through;
+}
+
+.Quote * {
+  font-style: italic;
+  margin-top: 0.6rem;
+}
