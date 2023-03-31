@@ -5,10 +5,10 @@ import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 export const EditTodoForm = ({ todo, editTodoEnd }) => {
   const [value, setValue] = useState(todo.task);
 
-  const ref = React.useRef(null);
+  const refInput = React.useRef(null);
 
   useEffect(() => {
-    ref.current.focus();
+    refInput.current.focus();
   }, []);
 
   const handleSubmit = (event) => {
@@ -33,7 +33,7 @@ export const EditTodoForm = ({ todo, editTodoEnd }) => {
         value={value}
         placeholder="Edit task"
         onChange={handleChange}
-        ref={ref}
+        ref={refInput}
       />
       <div>
         <button type="submit" className="edit-todo-btn">
