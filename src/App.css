@@ -1,8 +1,27 @@
 :root {
+  --text-color: #2c2c2c;
+
   --dominant-color: #ffffff;
   --secondary-color: #f1ecff;
   --tertiary-color: #dacff8;
   --accent-color: #8758ff;
+  --alternative-color: #f56dff;
+
+  --inactive-color: rgba(128, 128, 128, 0.4);
+  --shadow-color: rgba(128, 128, 128, 0.4);
+}
+
+[data-theme='dark'] {
+  --text-color: #cccccc;
+
+  --dominant-color: #242424;
+  --secondary-color: #36323f;
+  --tertiary-color: #3d374b;
+  --accent-color: #9064ff;
+  --alternative-color: rgb(212, 147, 255);
+
+  --inactive-color: rgba(128, 128, 128, 0.4);
+  --shadow-color: rgba(12, 12, 12, 0.5);
 }
 
 * {
@@ -15,6 +34,7 @@
 
 body {
   background: var(--dominant-color);
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +46,15 @@ body {
 
 h1 {
   font-size: 1.5rem;
+  background: var(--accent-color);
+  background: linear-gradient(
+    to right,
+    var(--accent-color) 0%,
+    var(--alternative-color) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
@@ -35,10 +64,10 @@ p {
 .TodoWrapper {
   background: var(--dominant-color);
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   border-radius: 20px;
   width: 30rem;
-  box-shadow: 0px 0px 40px 0px rgba(128, 128, 128, 0.4);
+  box-shadow: 0px 0px 40px 0px var(--shadow-color);
 }
 
 .TodoForm {
@@ -47,10 +76,11 @@ p {
 
 .todo-input {
   outline: none;
-  background: rgba(250, 250, 250);
   border-radius: 15px;
   border: 0px solid;
-  box-shadow: 0px 0px 10px 0px rgba(220, 220, 220) inset;
+  color: var(--text-color);
+  box-shadow: 0px 0px 10px 0px var(--shadow-color) inset;
+  background: var(--dominant-color);
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -60,14 +90,18 @@ p {
 }
 
 .todo-input:focus {
-  box-shadow: 0px 0px 10px 0px rgba(230, 230, 230) inset,
-    0px 0px 0px 1px var(--accent-color) inset;
+  box-shadow: 0px 0px 0px 1px var(--accent-color) inset;
   background: var(--dominant-color);
 }
 
 .todo-btn {
   font-weight: bold;
   background: var(--accent-color);
+  background: linear-gradient(
+    to right,
+    var(--accent-color) 0%,
+    var(--alternative-color) 100%
+  );
   border-radius: 15px;
   color: #fff;
   border: none;
@@ -75,11 +109,11 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 .todo-btn:hover {
-  box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5);
+  box-shadow: 0px 0px 10px 0px var(--shadow-color);
 }
 
 .todo-btn:active {
@@ -135,13 +169,12 @@ p {
   font-size: 0.9rem;
   text-align: left;
   width: 70%;
-  box-shadow: 0px 1px 0px 0px rgba(128, 128, 128);
+  box-shadow: 0px 1px 0px 0px var(--shadow-color);
   transition: 0.2s;
 }
 
 .edit-todo-input:focus {
   box-shadow: 0px 2px 0px 0px var(--accent-color);
-  transition: 0.2s;
 }
 
 .edit-todo-btn {
@@ -152,6 +185,7 @@ p {
   margin-right: 0.35rem;
   cursor: pointer;
   width: 14px;
+  transition: transform 0.2s;
 }
 
 .svg-inline--fa:hover {
@@ -163,12 +197,92 @@ p {
   margin-right: 0rem;
 }
 
+.fa-pen-to-square:hover {
+  transform: rotate(-20deg);
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.fa-trash:hover {
+  animation: wiggle 0.2s;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0px);
+  }
+  15% {
+    transform: scale(1, 2);
+  }
+  50% {
+    transform: translate(0px, -6px);
+  }
+  75% {
+    transform: translate(0px);
+  }
+  90% {
+    transform: translate(0px, -2px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.fa-check:hover {
+  animation: jump 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0px);
+  }
+  25% {
+    transform: translate(3px);
+  }
+  75% {
+    transform: translate(-3px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.fa-xmark:hover {
+  animation: shake 0.2s;
+}
+
+.fa-arrows-rotate:hover {
+  transform: rotate(180deg);
+}
+
 .completed {
-  color: rgba(128, 128, 128);
+  color: var(--inactive-color);
   text-decoration: line-through;
 }
 
 .Quote * {
   font-style: italic;
   margin-top: 0.6rem;
+}
+
+.DarkMode {
+  margin: 1.5rem auto 2rem auto;
+  padding: 10px 5px;
+  box-shadow: 0px 0px 8px 0px var(--shadow-color) inset;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
 }
