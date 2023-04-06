@@ -1,5 +1,5 @@
 :root {
-  --text-color: #2c2c2c;
+  --text-color: #313131;
 
   --dominant-color: #ffffff;
   --secondary-color: #f1ecff;
@@ -9,19 +9,23 @@
 
   --inactive-color: rgba(128, 128, 128, 0.4);
   --shadow-color: rgba(128, 128, 128, 0.4);
+
+  --toggle-translate: 0rem;
 }
 
 [data-theme='dark'] {
   --text-color: #cccccc;
 
-  --dominant-color: #242424;
-  --secondary-color: #36323f;
-  --tertiary-color: #3d374b;
+  --dominant-color: #363636;
+  --secondary-color: #4a4553;
+  --tertiary-color: #564e68;
   --accent-color: #9064ff;
   --alternative-color: rgb(212, 147, 255);
 
   --inactive-color: rgba(128, 128, 128, 0.4);
   --shadow-color: rgba(12, 12, 12, 0.5);
+
+  --toggle-translate: -3rem;
 }
 
 * {
@@ -169,7 +173,7 @@ p {
   font-size: 0.9rem;
   text-align: left;
   width: 70%;
-  box-shadow: 0px 1px 0px 0px var(--shadow-color);
+  box-shadow: 0px 1px 0px 0px var(--inactive-color);
   transition: 0.2s;
 }
 
@@ -279,10 +283,20 @@ p {
 }
 
 .DarkMode {
+  display: flex;
+  flex-direction: row;
   margin: 1.5rem auto 2rem auto;
-  padding: 10px 5px;
+  padding: 0.75rem 0rem;
   box-shadow: 0px 0px 8px 0px var(--shadow-color) inset;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
+  border-radius: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+.fa-moon,
+.fa-sun {
+  margin: 0rem 1.25rem 0rem 0.9rem;
+  transition: 0.3s;
+  transform: translate(var(--toggle-translate));
 }

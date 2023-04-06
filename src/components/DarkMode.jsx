@@ -19,10 +19,8 @@ export const DarkMode = ({}) => {
 
   return (
     <div className="DarkMode">
-      <FontAwesomeIcon
-        icon={theme === 'dark' ? faSun : faMoon}
-        onClick={() => toggleTheme()}
-      />
+      <FontAwesomeIcon icon={faMoon} onClick={() => toggleTheme()} />
+      <FontAwesomeIcon icon={faSun} onClick={() => toggleTheme()} />
     </div>
   );
 };

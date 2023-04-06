@@ -1,6 +1,6 @@
 import './App.css';
 import { TodoWrapper } from './components/TodoWrapper';
-import { DarkMode } from './DarkMode';
+import { DarkMode } from './components/DarkMode';
 
 function App() {
   return (
