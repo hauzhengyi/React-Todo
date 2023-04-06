@@ -242,7 +242,7 @@ p {
 }
 
 .fa-check:hover {
-  animation: jump 0.5s;
+  animation: jump 0.4s;
 }
 
 @keyframes shake {
