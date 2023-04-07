@@ -296,7 +296,7 @@ p {
 
 .fa-moon,
 .fa-sun {
-  margin: 0rem 1.25rem 0rem 0.9rem;
+  margin: 0rem 1.3rem 0rem 0.9rem;
   transition: 0.3s;
   transform: translate(var(--toggle-translate));
 }

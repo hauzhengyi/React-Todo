@@ -12,6 +12,7 @@ specifiers:
   react: ^18.2.0
   react-bootstrap: ^2.7.2
   react-dom: ^18.2.0
+  react-transition-group: ^4.4.5
   uuid: ^9.0.0
   vite: ^4.2.1
 
@@ -24,6 +25,7 @@ dependencies:
   react: 18.2.0
   react-bootstrap: 2.7.2_zula6vjvt3wdocc4mwcxqa6nzi
   react-dom: 18.2.0_react@18.2.0
+  react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
   uuid: 9.0.0
 
 devDependencies:
