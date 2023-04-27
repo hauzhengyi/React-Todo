@@ -10,7 +10,7 @@
   --inactive-color: rgba(128, 128, 128, 0.4);
   --shadow-color: rgba(128, 128, 128, 0.4);
 
-  --toggle-translate: 0rem;
+  --toggle-translate: 0;
 }
 
 [data-theme='dark'] {
@@ -25,7 +25,7 @@
   --inactive-color: rgba(128, 128, 128, 0.4);
   --shadow-color: rgba(12, 12, 12, 0.5);
 
-  --toggle-translate: -3rem;
+  --toggle-translate: -41px;
 }
 
 * {
@@ -297,7 +297,7 @@ p {
 
 .fa-moon,
 .fa-sun {
-  margin: 0rem 1.3rem 0rem 0.9rem;
+  margin: 0 14px;
   transition: 0.3s;
   transform: translate(var(--toggle-translate));
 }
@@ -306,7 +306,7 @@ p {
 
 @media screen and (max-width: 600px) {
   .TodoWrapper {
-    width: 90%;
+    width: 90vw;
     margin-inline: auto;
     padding-inline: 1.8rem;
   }
