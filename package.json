@@ -1,5 +1,6 @@
 {
   "name": "vite-react-starter",
+  "homepage": "https://hauzhengyi.github.io/React-Todo/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
