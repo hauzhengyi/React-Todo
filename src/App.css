@@ -300,3 +300,26 @@ p {
   transition: 0.3s;
   transform: translate(var(--toggle-translate));
 }
+
+/* ============== MEDIA QUERY SMALL DEVICES ============== */
+
+@media screen and (max-width: 600px) {
+  .TodoWrapper {
+    width: 85%;
+    margin-inline: auto;
+  }
+
+  .todo-input {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-inline: auto;
+  }
+
+  form {
+    margin-bottom: 1rem;
+  }
+
+  .Todo {
+    padding-inline: 0.9rem;
+  }
+}
