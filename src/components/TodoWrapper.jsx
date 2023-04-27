@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TodoForm } from './TodoForm';
 import { Quote } from './Quote';
 import { v4 as uuidv4 } from 'uuid';
@@ -6,7 +6,13 @@ import { Todo } from './Todo';
 import { EditTodoForm } from './EditTodoForm';
 
 export const TodoWrapper = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem('todos')) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (todo) => {
     setTodos([
