@@ -7,6 +7,10 @@ function App() {
     <div className="App">
       <TodoWrapper />
       <DarkMode />
+      <footer className="todo-footer">
+        <div>Created using React JS</div>
+        <div>by Zheng Yi</div>
+      </footer>
     </div>
   );
 }
